@@ -37,19 +37,51 @@
   <url>
     <loc>https://voenniy-advokat-voronej.vercel.app/</loc>
     <image:image>
-      <image:loc>https://voenniy-advokat-voronej.vercel.app/media/office1.png</image:loc>
+      <image:loc>https://voenniy-advokat-voronej.vercel.app/media/office1.jpg</image:loc>
       <image:title>Офис военного адвоката в Воронеже - приемная</image:title>
       <image:caption>Комфортная приемная для клиентов военного адвоката</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://voenniy-advokat-voronej.vercel.app/media/office2.png</image:loc>
+      <image:loc>https://voenniy-advokat-voronej.vercel.app/media/office2.jpg</image:loc>
       <image:title>Офис военного адвоката в Воронеже - рабочий кабинет</image:title>
       <image:caption>Профессиональный рабочий кабинет адвоката</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://voenniy-advokat-voronej.vercel.app/media/office3.png</image:loc>
+      <image:loc>https://voenniy-advokat-voronej.vercel.app/media/office3.jpg</image:loc>
       <image:title>Офис военного адвоката в Воронеже - переговорная</image:title>
       <image:caption>Переговорная комната для конфиденциальных встреч</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://voenniy-advokat-voronej.vercel.app/media/office4.jpg</image:loc>
+      <image:title>Офис военного адвоката в Воронеже - консультационный кабинет</image:title>
+      <image:caption>Кабинет для очных консультаций и разбора документов</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://voenniy-advokat-voronej.vercel.app/pages/voennyy-advokat.html</loc>
+    <image:image>
+      <image:loc>https://voenniy-advokat-voronej.vercel.app/media/hero.png</image:loc>
+      <image:title>Военный адвокат в Воронеже</image:title>
+      <image:caption>Юридическая помощь военнослужащим по контрактам, выплатам и жилищным вопросам</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://voenniy-advokat-voronej.vercel.app/pages/yurist.html</loc>
+    <image:image>
+      <image:loc>https://voenniy-advokat-voronej.vercel.app/media/hero.png</image:loc>
+      <image:title>Юрист в Воронеже</image:title>
+      <image:caption>Консультации, документы и правовое сопровождение</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://voenniy-advokat-voronej.vercel.app/pages/rieltor.html</loc>
+    <image:image>
+      <image:loc>https://voenniy-advokat-voronej.vercel.app/media/hero.png</image:loc>
+      <image:title>Риелтор в Воронеже</image:title>
+      <image:caption>Сопровождение сделок и проверка документов на недвижимость</image:caption>
     </image:image>
   </url>
   

@@ -9,7 +9,12 @@
     content="Полный перечень услуг адвоката в Воронеже: военный адвокат (основная специализация), гражданский адвокат, юрист, риелтор. Юридическая помощь военнослужащим, семейные споры, трудовые споры, сделки с недвижимостью. Бесплатная консультация." />
   
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="yandex" content="index, follow">
+  <meta name="theme-color" content="#111827">
   <link rel="canonical" href="https://voenniy-advokat-voronej.vercel.app/pages/services.html" />
+  <link rel="alternate" hreflang="ru-RU" href="https://voenniy-advokat-voronej.vercel.app/pages/services.html" />
+  <link rel="alternate" hreflang="x-default" href="https://voenniy-advokat-voronej.vercel.app/pages/services.html" />
   <link rel="sitemap" type="application/xml" href="../sitemap.xml" title="Sitemap">
 
   <!-- Favicon -->
@@ -25,13 +30,19 @@
   <meta property="og:title" content="Услуги адвоката в Воронеже — Все специализации в одном специалисте" />
   <meta property="og:description"
     content="Комплексные юридические услуги в Воронеже: военный адвокат, гражданский адвокат, юрист, риелтор. Защита прав, сопровождение сделок, судебное представительство." />
+  <meta property="og:image" content="https://voenniy-advokat-voronej.vercel.app/media/hero.png" />
+  <meta property="og:image:alt" content="Услуги адвоката и юриста в Воронеже" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:site_name" content="Адвокат в Воронеже" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Услуги адвоката в Воронеже — Военный адвокат, Юрист, Риелтор" />
+  <meta name="twitter:description" content="Полный перечень юридических услуг в Воронеже. Первая консультация бесплатно." />
+  <meta name="twitter:image" content="https://voenniy-advokat-voronej.vercel.app/media/hero.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 
   <!-- Yandex.Metrika -->
   <script type="text/javascript">
@@ -55,7 +66,8 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial']
+            sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'],
+            serif: ['Merriweather', 'ui-serif', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif']
           },
           colors: {
             brand: {
@@ -79,6 +91,7 @@
       {
         "@type": "Service",
         "name": "Услуги адвоката в Воронеже",
+        "inLanguage": "ru-RU",
         "description": "Комплексные юридические услуги в Воронеже: военный адвокат (основная специализация), гражданский адвокат, юрист, риелтор.",
         "provider": {
           "@type": ["LegalService", "Attorney", "RealEstateAgent"],
@@ -121,6 +134,12 @@
   }
   </script>
 
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem('theme');
+      document.documentElement.setAttribute('data-theme', savedTheme === 'dark' ? 'dark' : 'light');
+    })();
+  </script>
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
@@ -213,10 +232,10 @@
   </nav>
 
   <main>
-    <section class="hidden py-8">
+    <section class="py-8" data-observe>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="prose prose-invert max-w-none text-gray-300">
-          <h1 class="text-3xl font-bold mb-4 text-theme">Услуги адвоката в Воронеже: все специализации в одном специалисте</h1>
+        <div class="max-w-4xl text-secondary leading-relaxed">
+          <h2 class="text-2xl font-bold mb-4 text-theme font-serif">Услуги адвоката в Воронеже: все специализации в одном специалисте</h2>
           
           <p>Как <strong>адвокат в Воронеже</strong>, я предлагаю полный спектр юридических услуг для частных лиц и организаций. 
           Основная специализация — <strong>военный адвокат в Воронеже</strong>. Однако профессиональная помощь доступна и по другим направлениям права.</p>
@@ -236,20 +255,21 @@
       </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-observe>
       <div class="max-w-4xl">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-theme leading-tight">Услуги адвоката в Воронеже</h1>
         <p class="mt-4 text-lg text-gray-300 leading-relaxed">Адвокат в Воронеже: военный адвокат (основная специализация), гражданский адвокат, юрист, риелтор. Полный комплекс правовой поддержки: военное право, семейные споры, трудовые споры, недвижимость. Военный адвокат город Воронеж — помощь на всех этапах военной службы.</p>
+        <p class="mt-4 text-sm text-gray-400">Выберите направление ниже в фильтре, чтобы сразу увидеть нужные услуги.</p>
       </div>
 
       <!-- Фильтр по специализациям -->
       <div class="mt-8 mb-8">
         <div class="service-tabs-container">
           <button class="service-tab-btn active" data-category="all">Все услуги</button>
-          <button class="service-tab-btn" data-category="military">🛡️ Военный адвокат</button>
-          <button class="service-tab-btn" data-category="civil">⚖️ Гражданский адвокат</button>
-          <button class="service-tab-btn" data-category="lawyer">📚 Юрист</button>
-          <button class="service-tab-btn" data-category="realtor">🏠 Риелтор</button>
+          <button class="service-tab-btn" data-category="military">Военный адвокат</button>
+          <button class="service-tab-btn" data-category="civil">Гражданский адвокат</button>
+          <button class="service-tab-btn" data-category="lawyer">Юрист</button>
+          <button class="service-tab-btn" data-category="realtor">Риелтор</button>
         </div>
       </div>
 
@@ -270,7 +290,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-sm text-gray-400">&copy; <span id="year"></span> Юридические услуги в Воронеже. Все права защищены.</p>
-        <a class="text-sm link-accent" href="/">На главную</a>
+        <div class="flex items-center gap-4">
+          <a class="text-sm link-accent" href="/">Главная</a>
+          <a class="text-sm link-accent" href="/pages/services.html">Услуги</a>
+          <a class="text-sm link-accent" href="/pages/faq.html">Вопросы</a>
+          <a class="text-sm link-accent" href="/#contacts">Контакты</a>
+        </div>
       </div>
     </div>
   </footer>

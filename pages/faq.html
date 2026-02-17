@@ -9,7 +9,12 @@
     content="Полные ответы на частые вопросы по услугам адвоката в Воронеже: военный адвокат (основная специализация), гражданский адвокат, юрист, риелтор. Юридическая помощь военнослужащим, семейные споры, сделки с недвижимостью. Бесплатная консультация." />
   
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="yandex" content="index, follow">
+  <meta name="theme-color" content="#111827">
   <link rel="canonical" href="https://voenniy-advokat-voronej.vercel.app/pages/faq.html" />
+  <link rel="alternate" hreflang="ru-RU" href="https://voenniy-advokat-voronej.vercel.app/pages/faq.html" />
+  <link rel="alternate" hreflang="x-default" href="https://voenniy-advokat-voronej.vercel.app/pages/faq.html" />
   <link rel="sitemap" type="application/xml" href="../sitemap.xml" title="Sitemap">
 
   <!-- Favicon -->
@@ -25,13 +30,19 @@
   <meta property="og:title" content="Частые вопросы адвоката в Воронеже — Ответы по всем специализациям" />
   <meta property="og:description"
     content="Ответы на популярные вопросы по военному, гражданскому адвокату, юристу и риелтору в Воронеже. Комплексная юридическая помощь." />
+  <meta property="og:image" content="https://voenniy-advokat-voronej.vercel.app/media/hero.png" />
+  <meta property="og:image:alt" content="Частые вопросы по юридическим услугам в Воронеже" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:site_name" content="Адвокат в Воронеже" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Частые вопросы адвоката в Воронеже" />
+  <meta name="twitter:description" content="Ответы по военному праву, гражданским спорам, юридическим консультациям и недвижимости." />
+  <meta name="twitter:image" content="https://voenniy-advokat-voronej.vercel.app/media/hero.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 
   <!-- Yandex.Metrika -->
   <script type="text/javascript">
@@ -55,7 +66,8 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial']
+            sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'],
+            serif: ['Merriweather', 'ui-serif', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif']
           },
           colors: {
             brand: {
@@ -81,6 +93,7 @@
         "name": "Частые вопросы адвоката в Воронеже",
         "description": "Ответы на популярные вопросы по юридическим услугам в Воронеже: военный адвокат, гражданский адвокат, юрист, риелтор.",
         "url": "https://voenniy-advokat-voronej.vercel.app/pages/faq.html",
+        "inLanguage": "ru-RU",
         "mainEntity": [
           {
             "@type": "Question",
@@ -131,12 +144,19 @@
         "description": "Страница с ответами на популярные вопросы по юридическим услугам в Воронеже: военный адвокат, гражданские споры, сделки с недвижимостью.",
         "url": "https://voenniy-advokat-voronej.vercel.app/pages/faq.html",
         "inLanguage": "ru-RU",
-        "lastReviewed": "2024-01-01"
+        "lastReviewed": "2026-02-17",
+        "dateModified": "2026-02-17"
       }
     ]
   }
   </script>
 
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem('theme');
+      document.documentElement.setAttribute('data-theme', savedTheme === 'dark' ? 'dark' : 'light');
+    })();
+  </script>
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
@@ -230,7 +250,7 @@
 
   <main>
     <!-- SEO-текст вверху страницы -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-observe>
       <div class="max-w-4xl">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-theme leading-tight">Частые вопросы адвоката в Воронеже</h1>
         <p class="mt-4 text-lg text-gray-300 leading-relaxed">На этой странице собраны <strong>ответы на самые частые вопросы клиентов</strong> по услугам адвоката в Воронеже. 
@@ -244,7 +264,7 @@
       </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" data-observe>
       <!-- Поиск и фильтры -->
       <div class="mt-8">
         <!-- Поиск -->
@@ -264,12 +284,12 @@
         <div class="mb-8">
           <div class="faq-tabs-container" role="tablist" aria-label="Категории вопросов">
             <button class="faq-tab-btn active" data-category="all" role="tab" aria-selected="true">Все вопросы</button>
-            <button class="faq-tab-btn" data-category="general" role="tab" aria-selected="false">💼 Общие</button>
-            <button class="faq-tab-btn" data-category="military" role="tab" aria-selected="false">🛡️ Военный адвокат</button>
-            <button class="faq-tab-btn" data-category="civil" role="tab" aria-selected="false">⚖️ Гражданский адвокат</button>
-            <button class="faq-tab-btn" data-category="lawyer" role="tab" aria-selected="false">📚 Юрист</button>
-            <button class="faq-tab-btn" data-category="realtor" role="tab" aria-selected="false">🏠 Риелтор</button>
-            <button class="faq-tab-btn" data-category="cost" role="tab" aria-selected="false">💳 Стоимость</button>
+            <button class="faq-tab-btn" data-category="general" role="tab" aria-selected="false">Общие</button>
+            <button class="faq-tab-btn" data-category="military" role="tab" aria-selected="false">Военный адвокат</button>
+            <button class="faq-tab-btn" data-category="civil" role="tab" aria-selected="false">Гражданский адвокат</button>
+            <button class="faq-tab-btn" data-category="lawyer" role="tab" aria-selected="false">Юрист</button>
+            <button class="faq-tab-btn" data-category="realtor" role="tab" aria-selected="false">Риелтор</button>
+            <button class="faq-tab-btn" data-category="cost" role="tab" aria-selected="false">Стоимость</button>
           </div>
         </div>
       </div>
@@ -437,8 +457,8 @@
       </div>
     </section>
 
-    <!-- SEO-текст внизу страницы -->
-    <section class="hidden py-8 border-t border-theme">
+    <!-- SEO-текст внизу страницы (доступен роботам и скринридерам, визуально скрыт) -->
+    <section class="sr-only">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="prose prose-invert max-w-none text-gray-300">
           <h2 class="text-2xl font-bold mb-4 text-theme">Юридические услуги в Воронеже: ответы на все вопросы</h2>
@@ -498,60 +518,16 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-sm text-gray-400">&copy; <span id="year"></span> Адвокат в Воронеже. Все права защищены.</p>
-        <a class="text-sm link-accent" href="/" aria-label="Вернуться на главную страницу">На главную</a>
+        <div class="flex items-center gap-4">
+          <a class="text-sm link-accent" href="/" aria-label="Вернуться на главную страницу">Главная</a>
+          <a class="text-sm link-accent" href="/pages/services.html">Услуги</a>
+          <a class="text-sm link-accent" href="/pages/faq.html">Вопросы</a>
+          <a class="text-sm link-accent" href="/#contacts">Контакты</a>
+        </div>
       </div>
     </div>
   </footer>
   
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Установка текущего года
-      var y = document.getElementById('year'); 
-      if (y) y.textContent = new Date().getFullYear();
-      
-      // Поиск по FAQ
-      const searchInput = document.getElementById('faqSearch');
-      if (searchInput) {
-        searchInput.addEventListener('input', function(e) {
-          const searchTerm = e.target.value.toLowerCase();
-          const faqItems = document.querySelectorAll('.faq-item');
-          
-          faqItems.forEach(item => {
-            const text = item.textContent.toLowerCase();
-            if (text.includes(searchTerm)) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        });
-      }
-      
-      // Фильтрация по категориям
-      const tabButtons = document.querySelectorAll('.faq-tab-btn');
-      const faqItems = document.querySelectorAll('.faq-item');
-      
-      tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const category = this.getAttribute('data-category');
-          
-          // Обновление активной кнопки
-          tabButtons.forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
-          
-          // Фильтрация вопросов
-          faqItems.forEach(item => {
-            const itemCategory = item.getAttribute('data-category');
-            
-            if (category === 'all' || itemCategory === category) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        });
-      });
-    });
-  </script>
+  <script src="../assets/js/script.js" defer></script>
 </body>
 </html>

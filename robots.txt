@@ -9,21 +9,22 @@ Allow: /media/*.jpg
 Allow: /media/*.jpeg
 Allow: /media/*.webp
 Allow: /media/*.svg
-Disallow: /assets/js/
-Disallow: /assets/css/
+Allow: /assets/css/
+Allow: /assets/js/
 
 # Специальные правила для Yandex
 User-agent: Yandex
 Allow: /
 Allow: /pages/
 Allow: /media/
-Disallow: /assets/
+Allow: /assets/
 
 # Специальные правила для Google
 User-agent: Googlebot
 Allow: /
 Allow: /pages/
 Allow: /media/
+Allow: /assets/
 
 # Запрет для ботов, которые не соблюдают правила
 User-agent: AhrefsBot

@@ -9,12 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
     el.classList.add('reveal-init');
   });
 
+  // Детальные анимации карточек внутри секций
+  var revealItems = Array.prototype.slice.call(
+    document.querySelectorAll('.service-detail-card, .service-card-main, .info-card, .faq-item, .card-hover')
+  );
+  revealItems.forEach(function (el, index) {
+    el.classList.add('reveal-item-init');
+    el.style.transitionDelay = Math.min(index % 6, 5) * 45 + 'ms';
+  });
+
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        entry.target.classList.add('reveal-in');
+        var target = entry.target;
+        var stagger = parseInt(target.getAttribute('data-stagger') || '0', 10);
+        if (stagger > 0) {
+          target.style.transitionDelay = stagger + 'ms';
+        }
+        target.classList.add('reveal-in');
         io.unobserve(entry.target);
-        var lazyImgs = entry.target.querySelectorAll('img[data-src]');
+        var lazyImgs = target.querySelectorAll('img[data-src]');
         lazyImgs.forEach(function (img) {
           img.src = img.getAttribute('data-src');
           img.removeAttribute('data-src');
@@ -24,6 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { root: null, rootMargin: '120px', threshold: 0.1 });
 
   sections.forEach(function (el) { io.observe(el); });
+
+  var itemObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-item-in');
+        itemObserver.unobserve(entry.target);
+      }
+    });
+  }, { root: null, rootMargin: '80px', threshold: 0.08 });
+
+  revealItems.forEach(function (el) { itemObserver.observe(el); });
 
   // Отдельный IO для картинок, если используются за пределами секций
   var imgObserver = new IntersectionObserver(function (entries) {
@@ -39,6 +64,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('img[data-src]').forEach(function (img) {
     imgObserver.observe(img);
+  });
+})();
+
+// Ленивая загрузка iframe при скролле/взаимодействии
+(function () {
+  var lazyFrames = Array.prototype.slice.call(document.querySelectorAll('iframe[data-src]'));
+  if (!lazyFrames.length) return;
+
+  function hydrateFrame(frame) {
+    var src = frame.getAttribute('data-src');
+    if (!src || frame.dataset.loaded === 'true') return;
+    frame.src = src;
+    frame.dataset.loaded = 'true';
+    frame.removeAttribute('data-src');
+  }
+
+  var frameObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        hydrateFrame(entry.target);
+        frameObserver.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '240px 0px' });
+
+  lazyFrames.forEach(function (frame) {
+    frameObserver.observe(frame);
+
+    // Запасной сценарий: если пользователь сразу нажимает на оверлей карты
+    var wrapper = frame.closest('.contact-map-interactive');
+    if (!wrapper) return;
+    var openBtn = wrapper.querySelector('#mapToggle');
+    if (openBtn) {
+      openBtn.addEventListener('click', function () {
+        hydrateFrame(frame);
+      }, { once: true });
+    }
   });
 })();
 
@@ -531,8 +593,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Инициализация: показываем категорию "general" при загрузке
-  currentCategory = 'general';
+  // Инициализация: берем категорию из активной кнопки
+  const activeBtn = document.querySelector('.faq-tab-btn.active');
+  currentCategory = activeBtn ? activeBtn.dataset.category : 'all';
+
+  // Поддержка query-параметра ?q= для SearchAction
+  const searchParams = new URLSearchParams(window.location.search);
+  const query = searchParams.get('q');
+  if (query && searchInput) {
+    searchInput.value = query;
+    currentSearch = query;
+  }
+
   filterFAQ();
 })();
 
@@ -591,4 +663,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Инициализация: показываем военного адвоката при загрузке
   filterServices(currentCategory);
+})();
+
+// Управление интерактивной картой в контактах
+(function () {
+  const mapWrapper = document.querySelector('.contact-map-interactive');
+  const mapToggle = document.getElementById('mapToggle');
+  const mapCollapse = document.getElementById('mapCollapse');
+
+  if (!mapWrapper || !mapToggle || !mapCollapse) return;
+
+  function openMap() {
+    mapWrapper.classList.add('is-active');
+    mapToggle.setAttribute('aria-expanded', 'true');
+    mapCollapse.classList.remove('hidden');
+  }
+
+  function collapseMap() {
+    mapWrapper.classList.remove('is-active');
+    mapToggle.setAttribute('aria-expanded', 'false');
+    mapCollapse.classList.add('hidden');
+  }
+
+  mapToggle.addEventListener('click', openMap);
+  mapCollapse.addEventListener('click', collapseMap);
 })();

@@ -395,7 +395,10 @@ function initServices() {
   const container = document.getElementById('servicesContainer');
   if (!container) return;
 
-  let currentCategory = 'all';
+  const allowedCategories = ['all', 'military', 'civil', 'lawyer', 'realtor'];
+  const params = new URLSearchParams(window.location.search);
+  const queryCategory = params.get('category');
+  let currentCategory = allowedCategories.includes(queryCategory) ? queryCategory : 'all';
 
   function renderServices(category = 'all') {
     const filtered = category === 'all' 
@@ -415,11 +418,19 @@ function initServices() {
   // Обработчики фильтров
   const filterBtns = document.querySelectorAll('.service-tab-btn[data-category]');
   filterBtns.forEach(btn => {
+    const isActive = btn.dataset.category === currentCategory;
+    btn.classList.toggle('active', isActive);
+  });
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentCategory = btn.dataset.category;
       renderServices(currentCategory);
+
+      const url = new URL(window.location.href);
+      url.searchParams.set('category', currentCategory);
+      window.history.replaceState({}, '', url.toString());
     });
   });
 
